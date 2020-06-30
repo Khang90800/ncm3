@@ -10,3 +10,9 @@
   border: 1px solid grey;
   padding: 15px 0 15px 0;
 }
+
+.subListContainer {
+  min-width: 800 px;
+  width: 80%;
+  margin: auto;
+}
