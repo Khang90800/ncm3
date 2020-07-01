@@ -6,4 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: [ './nc-list.component.css' ]
 })
 export class NcListComponent  {
+
+   ncProperties = [
+    {
+      id: '22',
+      label: 'hozoei'
+    },
+    {
+      id: '23',
+      label: 'ojze'
+    },
+    {
+      id: '24',
+      label: 'cnklncs'
+    },
+  ];
+
+  constructor() {}
 }
