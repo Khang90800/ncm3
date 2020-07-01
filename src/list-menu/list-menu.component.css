@@ -4,22 +4,16 @@
 }
 
 #listMenuComponent {
-  min-width: 800 px;
+  display: flex;
+  flex-direction: row;
   width: 80%;
   margin: auto;
 }
 
-li {
-  display: inline-block;
-  width: 33.1%;
-  text-align: center;
+.listMenuComponentChild {
+  flex: 1;
   border: 1px solid grey;
   height: 40px;
   line-height: 40px;
-}
-
-ul li a {
-  display: block;
-  height: 100%;
-  width: 100%;
+  text-align: center;
 }
