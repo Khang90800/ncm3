@@ -18,6 +18,7 @@ p {
 
 .boxTableBody:nth-child(1) {
   flex: 1;
+  min-width: 80px;
 }
 
 .boxTableBody:nth-child(2) {

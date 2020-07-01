@@ -15,6 +15,7 @@ import { NcListComponent } from '../list-menu/nc-list/nc-list.component';
 import { ApListComponent } from '../list-menu/ap-list/app-list.component';
 import { AdListComponent } from '../list-menu/ad-list/ad-list.component';
 import { NcComponent } from '../list-menu/nc-list/nc/nc.component';
+import { NcService } from './services/nc.service';
 
 const appRoutes: Routes = [
   { path: 'add-nc', component: AddNcComponent },
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     NcComponent
   ],
   providers: [
+    NcService
   ],
   bootstrap: [ 
     AppComponent 

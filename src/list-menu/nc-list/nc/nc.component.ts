@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { NcService } from '../../../app/services/nc.service';
 
 @Component({
   selector: "app-nc",
@@ -9,6 +10,6 @@ export class NcComponent {
 
   @Input() ncId: string;
   @Input() ncLabel: string;
-  
-  constructor() {}
+
+  constructor(private ncService: NcService) {}
 }

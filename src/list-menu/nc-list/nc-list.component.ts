@@ -1,26 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NcService } from './../../app/services/nc.service';
 
 @Component({
   selector: 'app-nc-list',
   templateUrl: './nc-list.component.html',
   styleUrls: [ './nc-list.component.css' ]
 })
-export class NcListComponent  {
+export class NcListComponent implements OnInit {
 
-   ncProperties = [
-    {
-      id: '22',
-      label: 'hozoei'
-    },
-    {
-      id: '23',
-      label: 'ojze'
-    },
-    {
-      id: '24',
-      label: 'cnklncs'
-    },
-  ];
+  ncProperties: any[];
 
-  constructor() {}
+  constructor(private ncService: NcService) {}
+
+  ngOnInit() {
+    this.ncProperties = this.ncService.ncProperties;
+  }
 }

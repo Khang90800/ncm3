@@ -16,6 +16,7 @@
 .boxTable:nth-child(1) {
   background-color: gold;
   flex: 1;
+  min-width: 80px;
 }
 
 .boxTable:nth-child(2) {
