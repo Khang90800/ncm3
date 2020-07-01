@@ -1,19 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { NcService } from '../../../app/services/nc.service';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-nc',
-  templateUrl: './nc.component.html',
-  styleUrls: [ './nc.component.css' ]
+  selector: "app-nc",
+  templateUrl: "./nc.component.html",
+  styleUrls: ["./nc.component.css"]
 })
+export class NcComponent {
 
-export class NcComponent implements OnInit {
+  @Input() ncId: string;
+  @Input() ncLabel: string;
 
-  ncProperties: any[];
 
-  constructor(private ncService: NcService) {}
+  ncProperties = [
+    {
+      id: '22',
+      label: 'hozoei'
+    },
+    {
+      id: '23',
+      label: 'ojze'
+    },
+    {
+      id: '24',
+      label: 'cnklncs'
+    },
+  ];
 
-  ngOnInit() {
-    this.ncProperties = this.ncService.ncProperties;
-  }
+  constructor() {}
 }

@@ -1,9 +1,15 @@
 <app-list-menu></app-list-menu>
 
 <div class="subListContainer">
-  <ul>
-    <li><app-nc></app-nc></li>
-    <li><app-nc></app-nc></li>
-    <li><app-nc></app-nc></li>
-  </ul>
+  <div class="tableHead">
+    <div class="boxTable"><p>ID</p></div>
+    <div class="boxTable"><p>Label</p></div>
+  </div>
+
+  <div class="tableBody">
+     <app-nc *ngFor="let nc of ncProperties"
+                    [ncId]="nc.ncId"
+                    [ncLabel]="nc.ncLabel"></app-nc>
+  </div>
+
 </div>

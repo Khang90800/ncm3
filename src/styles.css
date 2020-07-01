@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+p {
+  margin: 15px;
+}
+
 .subMenuContainer {
   min-width: 800 px;
   width: 80%;
