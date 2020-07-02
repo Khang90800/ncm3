@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ap',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: [ './ap.component.css' ]
 })
 export class ApComponent {
+
+  @Input() apId: string;
+  @Input() apLabel: string;
 }

@@ -1,5 +1,17 @@
 <app-list-menu></app-list-menu>
 
-<div class="subMenuContainer">
-  <p>ap-list component</p>
+<div class="subListContainer">
+  <div class="tableHead">
+    <div class="boxTable"><p>AP_ID</p></div>
+    <div class="boxTable"><p>AP_Label</p></div>
+    <div class="boxTable"><p></p></div>
+  </div>
+
+  <div class="tableBody">
+    <app-ap  *ngFor="let ap of apProperties"
+              [apId]="ap.id"
+              [apLabel]="ap.label"></app-ap>
+ 
+  </div>
+
 </div>

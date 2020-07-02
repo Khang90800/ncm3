@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 15px;
+}
+
+.tableBody {
+  display: flex;
+  flex-direction: row;
+}
+
+.boxTableBody {
+  border: 1px solid grey;
+}
+
+.boxTableBody:nth-child(1) {
+  flex: 1;
+  min-width: 85px;
+}
+
+.boxTableBody:nth-child(2) {
+  flex: 9;
+  min-width: 100px;
+}
+
+.boxTableBody:nth-child(3) {
+  flex: 1;
+  min-width: 85px;
+}
