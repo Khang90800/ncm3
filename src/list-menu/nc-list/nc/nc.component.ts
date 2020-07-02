@@ -8,7 +8,7 @@ import { NcService } from '../../../app/services/nc.service';
 })
 export class NcComponent {
 
-  @Input() ncId: string;
+  @Input() ncId: number;
   @Input() ncLabel: string;
 
   constructor(private ncService: NcService) {}

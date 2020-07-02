@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NcService } from './../../app/services/nc.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-nc-list',
@@ -9,10 +10,16 @@ import { NcService } from './../../app/services/nc.service';
 export class NcListComponent implements OnInit {
 
   ncProperties: any[];
+  ncSubscription: Subscription;
 
   constructor(private ncService: NcService) {}
 
   ngOnInit() {
-    this.ncProperties = this.ncService.ncProperties;
+    this.ncSubscription = this.ncService.ncSubject.subscribe(
+      (ncProperties: any[]) => {
+        this.ncProperties = ncProperties;
+      }
+    );
+    this.ncService.emitNcSubject();
   }
 }
