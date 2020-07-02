@@ -8,6 +8,21 @@ p {
   margin: 15px;
 }
 
+a {
+  display: block;
+  background-color: lightblue;
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: dimgray;
+}
+
+a:active {
+  background-color: mediumseagreen;
+}
+
 .subMenuContainer {
   min-width: 800 px;
   width: 80%;
