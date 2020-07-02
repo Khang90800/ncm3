@@ -23,13 +23,13 @@ export class NcService {
     this.ncSubject.next(this.ncProperties.slice());
   }
 
-  addNc(inputLabelAddNcForm: string) {
+  addNc(id: number, inputLabelAddNcForm: string) {
     const ncObject = {
       id: 0,
       label: ''
     };
     ncObject.label = inputLabelAddNcForm;
-    // ncObject.id = this.ncProperties(this.ncProperties.length-1).id + 1;
+    ncObject.id = this.ncProperties(this.ncProperties.length-1).id + 1;
     this.ncProperties.push(ncObject);
     this.emitNcSubject();
   }
