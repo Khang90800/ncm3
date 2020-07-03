@@ -1,16 +1,37 @@
+import { Subject } from 'rxjs';
+
 export class ApService {
-  apProperties = [
+
+  apSubject = new Subject<any[]>();
+
+  private apProperties = [
     {
-      id: '87',
+      id: 1,
       label: 'pdââ'
     },
     {
-      id: '90',
+      id: 2,
       label: 'aamamamma'
     },
     {
-      id: '29',
+      id: 3,
       label: 'oiHHIHIOI'
     },
   ];
+
+  emitApSubject() {
+    this.apSubject.next(this.apProperties.slice());
+  }
+
+  addAp(inputLabelAddApForm: string) {
+    const apObject = {
+      id: 0,
+      label: ''
+    };
+    apObject.label = inputLabelAddApForm;
+    apObject.id = this.apProperties[(this.apProperties.length - 1)].id + 1;
+    this.apProperties.push(apObject);
+    this.emitApSubject();
+
+  }
 }

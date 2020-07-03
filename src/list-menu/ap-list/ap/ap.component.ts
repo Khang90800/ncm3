@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ApService } from '../../../app/services/ap.service';
 
 @Component({
   selector: 'app-ap',
@@ -9,4 +10,6 @@ export class ApComponent {
 
   @Input() apId: string;
   @Input() apLabel: string;
+
+  constructor(private apService: ApService) {}
 }

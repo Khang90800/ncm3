@@ -1,3 +1,24 @@
 <div class="subMenuContainer">
-  <p>add-ap-component</p>
+  <p>Add an AP </p>
+
+  <hr>
+
+  <form (ngSubmit)="onSubmit(apForm)" #apForm="ngForm">
+    <div class="formContainer">
+      <label for="inputIdAddApForm">Id : </label>
+      <input type="number" id="inputIdAddApForm" placeholder="automatic" name="inputIdAddApForm"
+             ngModel required disabled>
+    </div>
+    
+    <br>
+
+    <div class="formContainer">
+      <label for="inputLabelAddApForm">Label : </label>
+      <input type="string" id="inputLabelAddApForm" name="inputLabelAddApForm" 
+             ngModel required>
+    </div>
+
+    <button type="submit"
+            [disabled]="apForm.invalid">Register</button>
+  </form>
 </div>

@@ -1,3 +1,24 @@
 <div class="subMenuContainer">
-  <p>add-ad-component</p>
+  <p>Add an AD </p>
+
+  <hr>
+
+  <form (ngSubmit)="onSubmit(adForm)" #adForm="ngForm">
+    <div class="formContainer">
+      <label for="inputIdAddAdForm">Id : </label>
+      <input type="number" id="inputIdAddAdForm" placeholder="automatic" name="inputIdAddAdForm"
+             ngModel required disabled>
+    </div>
+    
+    <br>
+
+    <div class="formContainer">
+      <label for="inputLabelAddAdForm">Label : </label>
+      <input type="string" id="inputLabelAddAdForm" name="inputLabelAddAdForm" 
+             ngModel required>
+    </div>
+
+    <button type="submit"
+            [disabled]="adForm.invalid">Register</button>
+  </form>
 </div>
