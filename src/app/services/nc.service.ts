@@ -19,6 +19,15 @@ export class NcService {
     },
   ];
 
+  getNcById(id: number) {
+    const searchedNcId = this.ncProperties.find(
+      (ncObject) => {
+        return ncObject.id === id;
+      }
+    );
+    return searchedNcId;
+  }
+
   emitNcSubject() {
     this.ncSubject.next(this.ncProperties.slice());
   }
