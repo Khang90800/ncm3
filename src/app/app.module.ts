@@ -23,6 +23,7 @@ import { ApService } from './services/ap.service';
 import { AdService } from './services/ad.service';
 import { NcDetailsComponent } from '../list-menu/nc-list/nc-details/nc-details.component';
 import { ApDetailsComponent } from '../list-menu/ap-list/ap-details/ap-details.component';
+import { AdDetailsComponent } from '../list-menu/ad-list/ad-details/ad-details.component';
 
 const appRoutes: Routes = [
   { path: 'add-nc', component: AddNcComponent },
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   { path: 'ap-list', component: ApListComponent },
   { path: 'ap-list/:id', component: ApDetailsComponent },
   { path: 'ad-list', component: AdListComponent },
+  { path: 'ad-list/:id', component: AdDetailsComponent },
   { path: '', component: ListMenuComponent },
   { path: 'not-found', component: FourOhFourComponent },
   { path: '**', redirectTo: '/not-found' }
@@ -60,7 +62,8 @@ const appRoutes: Routes = [
     ApComponent,
     AdComponent,
     NcDetailsComponent,
-    ApDetailsComponent
+    ApDetailsComponent,
+    AdDetailsComponent
   ],
   providers: [
     NcService,

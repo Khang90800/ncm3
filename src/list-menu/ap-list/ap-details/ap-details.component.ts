@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApService } from '../../../app/services/ap.service';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-ap-details',
   templateUrl: './ap-details.component.html',

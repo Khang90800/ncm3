@@ -19,6 +19,15 @@ export class AdService {
     },
   ];
 
+  getAdById(id: number) {
+    const searchedAdId = this.adProperties.find(
+      (adObject) => {
+        return adObject.id === id;
+      }
+    );
+    return searchedAdId;
+  }
+
   emitAdSubject() {
     this.adSubject.next(this.adProperties.slice());
   }

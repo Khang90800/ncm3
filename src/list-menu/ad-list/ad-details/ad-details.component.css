@@ -1,0 +1,41 @@
+.subListContainer {
+  border: 1px solid grey;}
+
+  h2 {
+    margin: 15px;
+  }
+
+  hr {
+    width: 50%;
+    margin: 15px;
+  }
+
+  // detailsContainer
+
+  .detailsContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .detail {
+    display: inline-block;
+    width: 40%;
+    margin: 15px;
+  }
+
+  .titleDetail {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  label {
+    display: block;
+    border: 1px solid grey;
+    padding: 5px;
+    padding-left: 15px;
+  }
+
+  button {
+    margin-left: 15px;
+    padding: 5px;
+  }
