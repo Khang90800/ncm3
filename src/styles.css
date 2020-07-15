@@ -37,3 +37,12 @@ a:active {
   margin: auto;
   padding-bottom: 15px;
 }
+
+/* deleteButton */
+.deleteButton {
+  background-color: lightcoral;
+}
+
+.deleteButton:hover {
+  color: whitesmoke;
+}
