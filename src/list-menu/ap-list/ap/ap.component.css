@@ -30,3 +30,8 @@ p {
   flex: 1;
   min-width: 85px;
 }
+
+.boxTableBody a {
+  max-height: 100%;
+  padding: 15px;
+}

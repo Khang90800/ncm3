@@ -22,6 +22,7 @@ import { NcService } from './services/nc.service';
 import { ApService } from './services/ap.service';
 import { AdService } from './services/ad.service';
 import { NcDetailsComponent } from '../list-menu/nc-list/nc-details/nc-details.component';
+import { ApDetailsComponent } from '../list-menu/ap-list/ap-details/ap-details.component';
 
 const appRoutes: Routes = [
   { path: 'add-nc', component: AddNcComponent },
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
   { path: 'nc-list', component: NcListComponent },
   { path: 'nc-list/:id', component: NcDetailsComponent },
   { path: 'ap-list', component: ApListComponent },
+  { path: 'ap-list/:id', component: ApDetailsComponent },
   { path: 'ad-list', component: AdListComponent },
   { path: '', component: ListMenuComponent },
   { path: 'not-found', component: FourOhFourComponent },
@@ -57,7 +59,8 @@ const appRoutes: Routes = [
     NcComponent,
     ApComponent,
     AdComponent,
-    NcDetailsComponent
+    NcDetailsComponent,
+    ApDetailsComponent
   ],
   providers: [
     NcService,

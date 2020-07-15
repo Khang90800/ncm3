@@ -15,9 +15,18 @@ export class ApService {
     },
     {
       id: 3,
-      label: 'oiHHIHIOI'
+      label: 'ozpdjapdja'
     },
   ];
+
+  getApById(id: number) {
+    const searchedApId = this.apProperties.find(
+      (apObject) => {
+        return apObject.id === id;
+      }
+    );
+    return searchedApId;
+  }
 
   emitApSubject() {
     this.apSubject.next(this.apProperties.slice());
