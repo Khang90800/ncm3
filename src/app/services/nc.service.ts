@@ -7,16 +7,60 @@ export class NcService {
   private ncProperties = [
     {
       id: 1,
-      label: 'hozoei'
+      label: 'chien'
     },
     {
       id: 2,
-      label: 'ojzdzede'
+      label: 'chat'
     },
     {
       id: 3,
-      label: 'cnklncs'
+      label: 'moineau'
     },
+    {
+      id: 4,
+      label: 'poule'
+    },
+    {
+      id: 5,
+      label: 'lion'
+    },
+    {
+      id: 6,
+      label: 'canard'
+    },
+    {
+      id: 7,
+      label: 'cochon'
+    },
+    {
+      id: 8,
+      label: 'dinde'
+    },
+    {
+      id: 9,
+      label: 'renard'
+    },
+    {
+      id: 10,
+      label: 'éléphant'
+    },
+    {
+      id: 11,
+      label: 'rhinocéros'
+    },
+    {
+      id: 12,
+      label: 'fourmi'
+    },
+    {
+      id: 13,
+      label: 'abeille'
+    },
+    {
+      id: 14,
+      label: 'requin'
+    }
   ];
 
   getNcById(id: number) {
