@@ -3,8 +3,17 @@
   padding: 0;
 }
 
+a, button {
+  background-color: floralwhite;
+}
+
+a svg {
+  fill: black;
+}
+
 p {
   margin: 15px;
+  display: inline-block;
 }
 
 .tableBody {
@@ -14,6 +23,11 @@ p {
 
 .boxTableBody {
   border: 1px solid grey;
+  padding: 0;
+}
+
+.boxTableBody:hover button {
+  visibility: visible;
 }
 
 .boxTableBody:nth-child(1) {
@@ -26,12 +40,27 @@ p {
   min-width: 100px;
 }
 
-.boxTableBody:nth-child(3) {
-  flex: 1;
-  min-width: 85px;
+/* svg */
+.svgContainer {
+  float: right;
+  margin-right: 7px;
+  height: 30px;
+  margin-top: 12px;
+  line-height: 30px;
 }
 
-.boxTableBody a {
-  max-height: 100%;
-  padding: 15px;
+.svgContainer button {
+  visibility: hidden;
+  display: inline-block;
+  width: 25px;
+  fill: black;
+  margin-right: 7px;
+}
+
+.optionSvg:hover {
+  fill: dimgray;
+}
+
+.deleteSvg:hover {
+  fill: darkred;
 }

@@ -50,15 +50,13 @@ p {
 }
 
 .svgContainer button {
-  margin-right: 7px;
-}
-
-.svgContainer button {
   visibility: hidden;
   display: inline-block;
   width: 25px;
   fill: black;
+  margin-right: 7px;
 }
+
 
 .optionSvg:hover {
   fill: dimgray;

@@ -1,21 +1,47 @@
 <div class="subListContainer">
 
-  <h2>NC Details</h2>
+  <h2>NC Details
+    <span *ngIf="!isModifying">- View mode</span>
+    <span *ngIf="isModifying">- Update mode</span>
+  </h2>
   <hr>
 
-  <div class="detailsContainer">
+  <!-- detailsContainer - view mode -->
+  <div class="detailsContainer" *ngIf="!isModifying" >
     <div class="detail">
       <p class="titleDetail"><b>Id</b></p>
-      <label>{{ ncId }}</label>
+      <input type="text" placeholder="{{ ncId }}" disabled>
     </div>
 
-    <div class="detail">
+    <div class="detail" *ngIf="!isModifying">
       <p class="titleDetail"><b>Label</b></p>
       <label>{{ ncLabel }}</label>
     </div>
   </div>
 
+  <!-- detailsContainer - update mode -->
+  <div class="detailsContainer" *ngIf="isModifying" >
+    <div class="detail">
+      <p class="titleDetail"><b>Id (update mode)</b></p>
+      <input type="text" placeholder="{{ ncId }}" disabled>
+    </div>
+
+    <div class="detail" *ngIf="isModifying">
+      <p class="titleDetail"><b>Label (update mode)</b></p>
+      <input type="text"[(ngModel)]="ncLabel">
+    </div>
+    <div class="detail" *ngIf="isModifying">
+      <button (click)="onSaveChanges()">Save changes</button>
+    </div>
+    <div class="detail">{{ test }}</div>
+    <hr>
+  </div>
+
   <button routerLink="/nc-list">Back to NC_List</button>
+  <button (click)="switchModifyMode()"
+          [disabled]="isModifying">Update mode</button>
+  <button (click)="switchModifyMode()"
+          *ngIf="isModifying">Cancel</button>
   <button class="deleteButton">Delete the NC</button>
 
 </div>
