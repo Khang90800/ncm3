@@ -38,10 +38,8 @@
   </div>
 
   <button routerLink="/nc-list">Back to NC_List</button>
-  <button (click)="switchModifyMode()"
-          [disabled]="isModifying">Update mode</button>
-  <button (click)="switchModifyMode()"
-          *ngIf="isModifying">Cancel</button>
+  <button (click)="switchModifyMode()" [disabled]="isModifying">Update mode</button>
+  <button (click)="switchModifyMode()" *ngIf="isModifying">Cancel</button>
   <button class="deleteButton">Delete the NC</button>
 
 </div>
