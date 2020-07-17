@@ -86,4 +86,14 @@ export class NcService {
     this.ncProperties.push(ncObject);
     this.emitNcSubject();
   }
+
+  updateNc(i) {
+    const ncObject = {
+      id: 0,
+      label: 'aa'
+    }
+
+    ncObject.id = this.ncProperties
+    return 'id : ' + ncObject.id + ' -- label : ' + ncObject.label;
+  }
 }

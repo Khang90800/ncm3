@@ -28,7 +28,7 @@
 
     <div class="detail" *ngIf="isModifying">
       <p class="titleDetail"><b>Label (update mode)</b></p>
-      <input type="text"[(ngModel)]="ncLabel">
+      <input id="updateNcLabel" name="updateNcLabel" type="text"[(ngModel)]="ncLabel">
     </div>
     <div class="detail" *ngIf="isModifying">
       <button (click)="onSaveChanges()">Save changes</button>

@@ -12,7 +12,7 @@ export class NcDetailsComponent {
   ncId: number = 0;
   ncLabel: string = 'nc_label';
   isModifying = false;
-  test: string = '';
+  test: any = '';
 
   constructor(private ncService: NcService,
               private route: ActivatedRoute) {
@@ -30,6 +30,7 @@ export class NcDetailsComponent {
   }
 
   onSaveChanges() {
-    this.test = 'Test ok !';
+    this.test = this.ncService.updateNc(this.test);
   }
+
 }
