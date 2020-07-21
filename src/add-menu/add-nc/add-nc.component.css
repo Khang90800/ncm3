@@ -16,6 +16,7 @@ form {
 
 .formContainer {
   padding: 0;
+  margin-top: 20px;
 }
 
 .formContainer label {

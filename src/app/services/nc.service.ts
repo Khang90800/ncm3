@@ -34,6 +34,17 @@ export class NcService {
     ncObject.label = inputLabelAddNcForm;
     this.ncProperties.push(ncObject);
     this.emitNcSubject();
+
+    this.httpClient
+      .put('https://ncm3-ae536.firebaseio.com/nc.json', this.ncProperties)
+      .subscribe(
+        () => {
+          console.log('Save successful!');
+        },
+        (error) => {
+          console.log('Error!: ' + error);
+        }
+      );
   }
 
   updateNc(i) {

@@ -25,7 +25,10 @@ export class NcListComponent implements OnInit {
   }
 
   onFetchNc() {
-    this.ncService.getNcFromServ();
+    this.ncService.getNcFromServer();
   }
 
+  onSaveList() {
+    this.ncService.saveNcToServer();
+  }
 }
