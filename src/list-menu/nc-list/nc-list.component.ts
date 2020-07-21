@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './nc-list.component.html',
   styleUrls: [ './nc-list.component.css' ]
 })
+
 export class NcListComponent implements OnInit {
 
   ncProperties: any[];
@@ -22,4 +23,9 @@ export class NcListComponent implements OnInit {
     );
     this.ncService.emitNcSubject();
   }
+
+  onFetchNc() {
+    this.ncService.getNcFromServ();
+  }
+
 }

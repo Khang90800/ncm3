@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Injectable } from "@angular/core";
 import { NcService } from '../../../app/services/nc.service';
 
 @Component({
@@ -6,10 +6,13 @@ import { NcService } from '../../../app/services/nc.service';
   templateUrl: "./nc.component.html",
   styleUrls: ["./nc.component.css"]
 })
+
+@Injectable()
 export class NcComponent {
 
   @Input() ncId: number;
   @Input() ncLabel: string;
 
   constructor(private ncService: NcService) {}
+
 }

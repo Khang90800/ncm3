@@ -30,7 +30,5 @@ export class NcDetailsComponent {
   }
 
   onSaveChanges() {
-    this.test = this.ncService.updateNc(this.test);
   }
-
 }

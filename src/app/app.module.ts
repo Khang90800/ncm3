@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -24,6 +24,7 @@ import { AdService } from './services/ad.service';
 import { NcDetailsComponent } from '../list-menu/nc-list/nc-details/nc-details.component';
 import { ApDetailsComponent } from '../list-menu/ap-list/ap-details/ap-details.component';
 import { AdDetailsComponent } from '../list-menu/ad-list/ad-details/ad-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'add-nc', component: AddNcComponent },
@@ -45,6 +46,8 @@ const appRoutes: Routes = [
   imports: [ 
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [ 

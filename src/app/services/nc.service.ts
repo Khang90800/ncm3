@@ -1,67 +1,16 @@
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class NcService {
 
   ncSubject = new Subject<any[]>();
 
-  private ncProperties = [
-    {
-      id: 1,
-      label: 'chien'
-    },
-    {
-      id: 2,
-      label: 'chat'
-    },
-    {
-      id: 3,
-      label: 'moineau'
-    },
-    {
-      id: 4,
-      label: 'poule'
-    },
-    {
-      id: 5,
-      label: 'lion'
-    },
-    {
-      id: 6,
-      label: 'canard'
-    },
-    {
-      id: 7,
-      label: 'cochon'
-    },
-    {
-      id: 8,
-      label: 'dinde'
-    },
-    {
-      id: 9,
-      label: 'renard'
-    },
-    {
-      id: 10,
-      label: 'éléphant'
-    },
-    {
-      id: 11,
-      label: 'rhinocéros'
-    },
-    {
-      id: 12,
-      label: 'fourmi'
-    },
-    {
-      id: 13,
-      label: 'abeille'
-    },
-    {
-      id: 14,
-      label: 'requin'
-    }
-  ];
+  private ncProperties = [];
+
+  
+  constructor(private httpClient: HttpClient) {}
 
   getNcById(id: number) {
     const searchedNcId = this.ncProperties.find(
@@ -76,24 +25,44 @@ export class NcService {
     this.ncSubject.next(this.ncProperties.slice());
   }
 
-  addNc(inputLabelAddNcForm: string) {
+  addNc(inputIdAddNcForm: string, inputLabelAddNcForm: string) {
     const ncObject = {
       id: 0,
       label: ''
     };
+    ncObject.id = this.ncProperties.length + 1;
     ncObject.label = inputLabelAddNcForm;
-    ncObject.id = this.ncProperties[(this.ncProperties.length - 1)].id + 1;
     this.ncProperties.push(ncObject);
     this.emitNcSubject();
   }
 
   updateNc(i) {
-    const ncObject = {
-      id: 0,
-      label: 'aa'
-    }
+  }
 
-    ncObject.id = this.ncProperties
-    return 'id : ' + ncObject.id + ' -- label : ' + ncObject.label;
+  saveNcToServer() {
+    this.httpClient
+      .put('https://ncm3-ae536.firebaseio.com/nc.json', this.ncProperties)
+      .subscribe(
+        () => {
+          console.log('Save successful!');
+        },
+        (error) => {
+          console.log('Error!: ' + error);
+        }
+      );
+  }
+
+  getNcFromServer() {
+    this.httpClient
+      .get<any[]>('https://ncm3-ae536.firebaseio.com/nc.json')
+      .subscribe(
+        (response) => {
+          this.ncProperties = response;
+          this.emitNcSubject();
+        },
+        (error) => {
+          console.log('Error!: ' + error);
+        }
+      );
   }
 }

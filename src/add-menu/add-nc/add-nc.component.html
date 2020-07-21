@@ -3,33 +3,17 @@
 
   <hr>
 
-  <form (ngSubmit)="onSubmit(ncForm)" #ncForm="ngForm">
+  <form [formGroup]="addNcForm" (ngSubmit)="onSubmit()">
     <div class="formContainer">
-      <label for="inputIdAddNcForm">Id : </label>
-      <input type="number"
-              id="inputIdAddNcForm"
-              name="inputIdAddNcForm"
-              class="form-control" 
-              placeholder="automatic" 
-              required disabled ngModel> 
+      <label for="inputIdAddNcForm">Id :</label>
+      <input type="number" id="inputIdAddNcForm" formControlName="inputIdAddNcForm" placeholder="automatic">
     </div>
-
-    <br>
-
     <div class="formContainer">
-      <label for="inputLabelAddNcForm"> Label : </label>
-      <input type="text" 
-              class="form-control"
-              id="inputLabelAddNcForm" 
-              name="inputLabelAddNcForm"
-              class="form-control" 
-              ngModel required>
+      <label for="inputLabelAddNcForm">Label :</label>
+      <input type="text" id="inputLabelAddNcForm" formControlName="inputLabelAddNcForm">
     </div>
-
-    <button type="submit"
-            [disabled]="ncForm.invalid">Register</button>
-
-
-
+    <button type="submit" [disabled]="addNcForm.invalid">Create an NC</button>
   </form>
+
+  <p>{{ errorMessage }}</p>
 </div>
