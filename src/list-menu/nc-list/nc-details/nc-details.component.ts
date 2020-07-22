@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NcService } from '../../../app/services/nc.service';
 import { ActivatedRoute } from '@angular/router';
-import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-nc-details',
   templateUrl: './nc-details.component.html',

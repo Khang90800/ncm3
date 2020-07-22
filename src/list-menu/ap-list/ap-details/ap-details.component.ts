@@ -10,12 +10,25 @@ import { ActivatedRoute } from '@angular/router';
 export class ApDetailsComponent {
 
   apId: number = 0;
-  apLabel: string = 'ap_label';  
+  apLabel: string = 'ap_label';
+  isModifying = false;
+  test: any = '';
 
   constructor(private apService: ApService,
               private route: ActivatedRoute) {
     const id = this.route.snapshot.params['id']; 
     this.apId = this.apService.getApById(+id).id;    
     this.apLabel = this.apService.getApById(+id).label;    
+  }
+
+  switchModifyMode(){
+    if(this.isModifying === true) {
+      this.isModifying = false;
+    } else if(this.isModifying === false) {
+      this.isModifying = true;
+    }
+  }
+
+  onSaveChanges() {
   }
 }

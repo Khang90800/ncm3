@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApService } from '../../app/services/ap.service';
 import { Router } from '@angular/router';
 
@@ -10,12 +10,28 @@ import { Router } from '@angular/router';
 })
 export class AddApComponent  {
 
-  constructor(private apService: ApService,
+  addApForm: FormGroup;
+  errorMessage: string;
+
+  constructor(private formBuilder: FormBuilder,
+              private apService: ApService,
               private router: Router) {}
 
-  onSubmit(form: NgForm) {
-    const label = form.value['inputLabelAddApForm'];
-    this.apService.addAp(label);
+  ngOnInit() {
+    this.initForm();
+  }
+
+  initForm() {
+    this.addApForm = this.formBuilder.group({
+      inputIdAddApForm: [{value: '', disabled:true}],
+      inputLabelAddApForm: ['', Validators.required]
+    })
+  }
+  onSubmit() {
     this.router.navigate(['/ap-list']);
+    const id = this.addApForm.get('inputIdAddApForm').value;
+    const label = this.addApForm.get('inputLabelAddApForm').value;
+    this.apService.addAp(id, label)
+
   }
 }

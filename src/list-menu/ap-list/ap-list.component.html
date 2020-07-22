@@ -2,14 +2,17 @@
 
 <div class="subListContainer">
   <div class="tableHead">
-    <div class="boxTable"><p>AP_ID</p></div>
-    <div class="boxTable"><p>AP_Label</p></div>
+    <div class="boxTable"><p>NC_ID</p></div>
+    <div class="boxTable"><p>NC_Label</p></div>
   </div>
 
   <div class="tableBody">
     <app-ap  *ngFor="let ap of apProperties"
               [apId]="ap.id"
-              [apLabel]="ap.label"></app-ap>
+              [apLabel]="ap.label"></app-ap> 
   </div>
+
+  <button (click)="onFetchAp()">Reload AP List</button>
+  <button (click)="onSaveList()">Save list</button>
 
 </div>

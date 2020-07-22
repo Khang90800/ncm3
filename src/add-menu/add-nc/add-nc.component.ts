@@ -34,15 +34,4 @@ export class AddNcComponent implements OnInit {
     this.ncService.addNc(id, label)
 
   }
-
-  // onSubmit(form: NgForm) {
-  //   const label = form.value['inputLabelAddNcForm'];
-  //   this.ncService.addNc(label);
-  //   this.router.navigate(['/nc-list']);
-  // }
-
-  // onSave() {
-  //   this.ncService.saveNcToServer();
-  // }
-
 }

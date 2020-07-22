@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './ap-list.component.html',
   styleUrls: [ './ap-list.component.css' ]
 })
+
 export class ApListComponent implements OnInit {
 
   apProperties: any[];
@@ -21,5 +22,13 @@ export class ApListComponent implements OnInit {
       }
     );
     this.apService.emitApSubject();
+  }
+
+  onFetchAp() {
+    this.apService.getApFromServer();
+  }
+
+  onSaveList() {
+    this.apService.saveApToServer();
   }
 }

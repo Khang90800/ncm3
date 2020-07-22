@@ -1,41 +1,73 @@
 .subListContainer {
   border: 1px solid grey;}
 
-  h2 {
-    margin: 15px;
-  }
+h2 {
+  margin: 15px;
+}
 
-  hr {
-    width: 50%;
-    margin: 15px;
-  }
+hr {
+  width: 50%;
+  margin: 15px;
+}
 
-  // detailsContainer
+/* detailsContainer */
 
-  .detailsContainer {
-    display: flex;
-    flex-direction: row;
-  }
+.detailsContainer hr {
+  margin-top: 0;
+}
 
-  .detail {
-    display: inline-block;
-    width: 40%;
-    margin: 15px;
-  }
+.detail {
+  display: inline-block;
+  width: 40%;
+  margin: 15px;
+  min-width: 0%;
+}
 
-  .titleDetail {
-    margin: 0;
-    margin-bottom: 5px;
-  }
+.detail button {
+  margin-left: 0;
+}
 
-  label {
-    display: block;
-    border: 1px solid grey;
-    padding: 5px;
-    padding-left: 15px;
-  }
+.detail hr {
+  width: 100%;
+  margin: 0;
+}
 
-  button {
-    margin-left: 15px;
-    padding: 5px;
-  }
+.titleDetail {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+label, input {
+  display: block;
+  border: 1px solid grey;
+  padding: 5px;
+  padding-left: 15px;
+  height: 20px;
+  line-height: 20px;
+}
+
+input {
+  width: 96%;
+}
+
+button {
+  margin-left: 15px;
+  padding: 5px;
+}
+
+.deleteButton {
+  float: right;
+  margin-right: 15px;
+}
+
+/* form */
+
+form {
+  margin-bottom: 15px;
+}
+
+form label {
+  border: none;
+  padding-left: 0;
+  font-weight: bold;
+}
